@@ -1,8 +1,6 @@
 ## BalmJS template - pwa
 > A PWA project
 
-⚠️ 未完成，仅供娱乐玩耍用
-
 ## Installation
 
 ```sh
