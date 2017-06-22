@@ -1,0 +1,15 @@
+{
+  "name": "my-pwa",
+  "version": "0.0.0",
+  "description": "A PWA project",
+  "private": true,
+  "scripts": {
+    "dev": "gulp",
+    "prod": "gulp --production"
+  },
+  "devDependencies": {
+    "balm": "^0.7.1",
+    "gulp": "^3.9.1",
+    "sw-precache-webpack-plugin": "^0.11.3"
+  }
+}
