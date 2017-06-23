@@ -31,6 +31,12 @@ balm.config = {
         cacheId: 'balm',
         dontCacheBustUrlsMatching: /\.\w{8}\./,
         filename: 'service-worker.js',
+        staticFileGlobs: [
+          'dist/css/*.css',
+          'dist/img/**.*',
+          'dist/js/*.js'
+        ],
+        stripPrefix: 'dist/',
         minify: true,
         navigateFallback: PUBLIC_PATH + 'index.html',
         staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
