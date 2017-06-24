@@ -14,9 +14,6 @@ balm.config = {
       img: 'images'
     }
   },
-  // html: {
-  //   publicUrl: PUBLIC_PATH
-  // },
   styles: {
     ext: 'css', // Default use PostCSS
     autoprefixer: ['last 1 version']
