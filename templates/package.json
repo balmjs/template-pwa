@@ -10,6 +10,6 @@
   "devDependencies": {
     "balm": "^0.7.3",
     "gulp": "^3.9.1",
-    "sw-precache-webpack-plugin": "^0.11.3"
+    "workbox-build": "^1.0.1"
   }
 }

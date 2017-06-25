@@ -1,7 +1,23 @@
-var balm = require('balm');
-var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const balm = require('balm');
+const wbBuild = require('workbox-build');
 
-const PUBLIC_PATH = '';
+const SRC_DIR = balm.config.production ? 'dist' : 'app';
+const DIST_DIR = balm.config.production ? 'dist' : '.tmp';
+const SW_CONFIG = {
+  globDirectory: `./${SRC_DIR}/`,
+  swDest: `./${DIST_DIR}/service-worker.js`,
+  staticFileGlobs: ['**/*']
+};
+
+gulp.task('bundle-sw', () => {
+  return wbBuild.generateSW(SW_CONFIG)
+    .then(() => {
+      console.log('Service worker generated.');
+    })
+    .catch((err) => {
+      console.log('[ERROR] This happened: ' + err);
+    });
+});
 
 balm.config = {
   roots: {
@@ -21,38 +37,14 @@ balm.config = {
   scripts: {
     entry: {
       main: './app/scripts/main.js' // Entry js file
-    },
-    publicPath: PUBLIC_PATH,
-    plugins: [
-      new SWPrecacheWebpackPlugin({
-        cacheId: 'balm',
-        dontCacheBustUrlsMatching: /\.\w{8}\./,
-        filename: 'service-worker.js',
-        staticFileGlobs: [
-          'dist/css/*.css',
-          'dist/img/**.*',
-          'dist/js/*.js'
-        ],
-        stripPrefix: 'dist/',
-        minify: true,
-        navigateFallback: PUBLIC_PATH + 'index.html',
-        staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
-      })
-    ]
+    }
   }
   // More Config
   // https://github.com/balmjs/balm/blob/master/docs/configuration.md
 };
 
 balm.go(function(mix) {
-  if (balm.config.production) {
-    mix.jsmin('./config/service-worker-prod.js', 'dist/js', {
-      basename: 'sw'
-    });
-    mix.remove('./dist/js/service-worker-prod.js');
-  } else {
-    mix.copy('./config/service-worker-dev.js', '.tmp/js', {
-      basename: 'sw'
-    });
-  }
+  mix.end(function() {
+    gulp.start('bundle-sw');
+  });
 });
