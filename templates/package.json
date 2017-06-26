@@ -1,6 +1,6 @@
 {
   "name": "my-pwa",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "A PWA project",
   "private": true,
   "scripts": {
@@ -9,7 +9,9 @@
   },
   "devDependencies": {
     "balm": "^0.7.3",
+    "copy-webpack-plugin": "^4.0.1",
     "gulp": "^3.9.1",
-    "workbox-build": "^1.0.1"
+    "workbox-build": "^1.0.1",
+    "workbox-sw": "^1.0.1"
   }
 }

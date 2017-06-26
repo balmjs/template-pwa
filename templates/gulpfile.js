@@ -1,20 +1,23 @@
 const balm = require('balm');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const wbBuild = require('workbox-build');
 
 const SRC_DIR = balm.config.production ? 'dist' : 'app';
 const DIST_DIR = balm.config.production ? 'dist' : '.tmp';
 const SW_CONFIG = {
   globDirectory: `./${SRC_DIR}/`,
-  swDest: `./${DIST_DIR}/service-worker.js`,
-  staticFileGlobs: ['**/*']
+  globPatterns: ['**/*'],
+  globIgnores: ['service-worker.js'],
+  swSrc: `./app/service-worker.js`,
+  swDest: `./${DIST_DIR}/sw.js`
 };
 
 gulp.task('bundle-sw', () => {
-  return wbBuild.generateSW(SW_CONFIG)
+  return wbBuild.injectManifest(SW_CONFIG)
     .then(() => {
       console.log('Service worker generated.');
     })
-    .catch((err) => {
+    .catch(err => {
       console.log('[ERROR] This happened: ' + err);
     });
 });
@@ -37,14 +40,23 @@ balm.config = {
   scripts: {
     entry: {
       main: './app/scripts/main.js' // Entry js file
-    }
+    },
+    plugins: [
+      new CopyWebpackPlugin([{
+        from: require.resolve('workbox-sw'),
+        to: 'workbox-sw.prod.js'
+      }])
+    ]
+  },
+  extras: {
+    excludes: ['service-worker.js']
   }
   // More Config
   // https://github.com/balmjs/balm/blob/master/docs/configuration.md
 };
 
-balm.go(function(mix) {
-  mix.end(function() {
+balm.go(mix => {
+  mix.end(() => {
     gulp.start('bundle-sw');
   });
 });
