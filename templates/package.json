@@ -8,7 +8,7 @@
     "prod": "gulp --production"
   },
   "devDependencies": {
-    "balm": "^0.7.3",
+    "balm": "^0.7.4",
     "copy-webpack-plugin": "^4.0.1",
     "gulp": "^3.9.1",
     "workbox-build": "^1.0.1",
