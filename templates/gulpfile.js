@@ -8,7 +8,7 @@ const SW_CONFIG = {
   globDirectory: `./${SRC_DIR}/`,
   globPatterns: ['**/*'],
   globIgnores: ['service-worker.js'],
-  swSrc: `./app/service-worker.js`,
+  swSrc: './app/service-worker.js',
   swDest: `./${DIST_DIR}/sw.js`
 };
 
