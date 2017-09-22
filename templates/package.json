@@ -8,10 +8,10 @@
     "prod": "gulp --production"
   },
   "devDependencies": {
-    "balm": "^0.8.2",
+    "balm": "^0.9.1",
     "copy-webpack-plugin": "^4.0.1",
     "gulp": "^3.9.1",
-    "workbox-build": "^1.1.0",
-    "workbox-sw": "^1.1.0"
+    "workbox-build": "^2.0.1",
+    "workbox-sw": "^2.0.1"
   }
 }
