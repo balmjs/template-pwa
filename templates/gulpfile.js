@@ -55,8 +55,8 @@ balm.config = {
   // https://github.com/balmjs/balm/blob/master/docs/configuration.md
 };
 
-balm.go(mix => {
-  mix.end(() => {
-    gulp.start('bundle-sw');
-  });
-});
+balm.config.afterTask = () => {
+  gulp.start('bundle-sw');
+};
+
+balm.go();
