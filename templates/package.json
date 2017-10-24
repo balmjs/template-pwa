@@ -9,8 +9,8 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.0.1",
-    "balm": "^0.10.1",
-    "copy-webpack-plugin": "^4.1.1",
+    "balm": "^0.10.3",
+    "copy-webpack-plugin": "^4.2.0",
     "gulp": "^3.9.1",
     "workbox-build": "^2.1.0",
     "workbox-sw": "^2.1.0"

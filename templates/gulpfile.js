@@ -2,14 +2,13 @@ const balm = require('balm');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const wbBuild = require('workbox-build');
 
-const SRC_DIR = balm.config.production ? 'dist' : 'app';
 const DIST_DIR = balm.config.production ? 'dist' : '.tmp';
 const SW_CONFIG = {
-  globDirectory: `./${SRC_DIR}/`,
-  globPatterns: ['**/*'],
-  globIgnores: ['service-worker.js'],
   swSrc: './app/service-worker.js',
-  swDest: `./${DIST_DIR}/sw.js`
+  swDest: `./${DIST_DIR}/sw.js`,
+  globDirectory: `./${DIST_DIR}/`,
+  globPatterns: ['**/*'],
+  globIgnores: ['service-worker.js']
 };
 
 gulp.task('bundle-sw', () => {
