@@ -8,9 +8,9 @@ npm install -g balm-cli
 balm init pwa my-project
 
 cd my-project
-yarn install
+yarn
 # or
-npm install
+npm i
 ```
 
 > [manifest.json](https://app-manifest.firebaseapp.com/)

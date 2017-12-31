@@ -4,13 +4,13 @@
   "description": "A PWA project",
   "private": true,
   "scripts": {
-    "dev": "gulp",
-    "prod": "gulp --production"
+    "dev": "gulp --silent",
+    "prod": "gulp --silent --production"
   },
   "devDependencies": {
-    "babel-eslint": "^8.0.2",
-    "balm": "^0.11.0",
-    "copy-webpack-plugin": "^4.2.3",
+    "babel-eslint": "^8.1.2",
+    "balm": "^0.12.1",
+    "copy-webpack-plugin": "^4.3.1",
     "gulp": "^3.9.1",
     "workbox-build": "^2.1.2",
     "workbox-sw": "^2.1.2"
