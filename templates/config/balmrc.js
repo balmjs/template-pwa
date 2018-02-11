@@ -20,10 +20,12 @@ module.exports = {
       main: './app/scripts/main.js' // Entry js file
     },
     plugins: [
-      new CopyWebpackPlugin([{
-        from: require.resolve('workbox-sw'),
-        to: 'workbox-sw.prod.js'
-      }])
+      new CopyWebpackPlugin([
+        {
+          from: require.resolve('workbox-sw'),
+          to: 'workbox-sw.prod.js'
+        }
+      ])
     ]
   },
   extras: {

@@ -11,7 +11,8 @@ var SW_CONFIG = {
 };
 
 gulp.task('bundle-sw', () => {
-  return wbBuild.injectManifest(SW_CONFIG)
+  return wbBuild
+    .injectManifest(SW_CONFIG)
     .then(() => {
       console.log('Service worker generated.');
     })
