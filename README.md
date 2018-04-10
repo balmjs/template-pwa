@@ -1,4 +1,5 @@
 ## BalmJS template - pwa
+
 > A PWA project
 
 ## Installation
@@ -13,7 +14,7 @@ yarn
 npm i
 ```
 
-> [manifest.json](https://app-manifest.firebaseapp.com/)
+> [App Manifest Generator](https://app-manifest.firebaseapp.com/)
 
 ## Enjoy
 

@@ -1,19 +1,25 @@
-importScripts('workbox-sw.prod.js');
+importScripts('workbox-sw.js');
 
-// Create Workbox service worker instance
-const workboxSW = new self.WorkboxSW();
+if (workbox) {
+  console.log(`Yay! Workbox is loaded 🎉`);
+} else {
+  console.log(`Boo! Workbox didn't load 😬`);
+}
 
-// Placeholder array which is populated automatically by workboxBuild.injectManifest()
-workboxSW.precache([]);
-
-// Receive message
-self.addEventListener('message', function(event) {
-  console.log(event.data);
+workbox.core.setCacheNameDetails({
+  prefix: 'my-app',
+  suffix: 'v1'
 });
 
-// Send message
-self.clients.matchAll().then(function(clients) {
-  clients.forEach(function(client) {
-    client.postMessage('Service worker attached.');
-  });
+workbox.precaching.precacheAndRoute([]);
+
+workbox.routing.registerRoute(
+  /.*\.(?:png|jpg|jpeg|svg|gif)/g,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'my-image-cache'
+  })
+);
+
+self.addEventListener('message', function(event) {
+  console.log(event.data);
 });

@@ -1,18 +1,16 @@
 var balm = require('balm');
-var wbBuild = require('workbox-build');
+var workboxBuild = require('workbox-build');
 
 var DIST_DIR = balm.config.production ? 'dist' : '.tmp';
-var SW_CONFIG = {
-  swSrc: './app/service-worker.js',
-  swDest: `./${DIST_DIR}/sw.js`,
-  globDirectory: `./${DIST_DIR}/`,
-  globPatterns: ['**/*'],
-  globIgnores: ['service-worker.js']
-};
 
-gulp.task('bundle-sw', () => {
-  return wbBuild
-    .injectManifest(SW_CONFIG)
+gulp.task('generate-sw', () => {
+  return workboxBuild
+    .injectManifest({
+      swSrc: './app/service-worker.js',
+      swDest: `${DIST_DIR}/sw.js`,
+      globDirectory: DIST_DIR,
+      globPatterns: ['**/*.{js,css,html,png}']
+    })
     .then(() => {
       console.log('Service worker generated.');
     })
