@@ -8,10 +8,10 @@
     "prod": "gulp --silent --production"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.2",
-    "balm": "^0.19.0",
+    "babel-eslint": "^8.2.3",
+    "balm": "^0.20.2",
     "gulp": "^3.9.1",
-    "workbox-build": "^3.0.1",
-    "workbox-sw": "^3.0.1"
+    "workbox-build": "^3.1.0",
+    "workbox-sw": "^3.1.0"
   }
 }

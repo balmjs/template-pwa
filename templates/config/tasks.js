@@ -6,15 +6,18 @@ var DIST_DIR = balm.config.production ? 'dist' : '.tmp';
 gulp.task('generate-sw', () => {
   return workboxBuild
     .injectManifest({
-      swSrc: './app/service-worker.js',
-      swDest: `${DIST_DIR}/sw.js`,
       globDirectory: DIST_DIR,
-      globPatterns: ['**/*.{js,css,html,png}']
+      globPatterns: ['**/*.{html,css,js,ico,png,svg}'],
+      swDest: `${DIST_DIR}/sw.js`,
+      swSrc: `${balm.config.roots.source}/service-worker.js`
     })
-    .then(() => {
-      console.log('Service worker generated.');
+    .then(({ warnings }) => {
+      for (const warning of warnings) {
+        console.warn(warning);
+      }
+      console.info('Service worker generation completed.');
     })
-    .catch(err => {
-      console.log('[ERROR] This happened: ' + err);
+    .catch(error => {
+      console.warn('Service worker generation failed:', error);
     });
 });
