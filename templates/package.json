@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
-    "balm": "^0.20.2",
+    "balm": "^0.20.6",
     "gulp": "^3.9.1",
     "workbox-build": "^3.1.0",
     "workbox-sw": "^3.1.0"
