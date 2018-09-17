@@ -1,6 +1,6 @@
 {
   "name": "my-pwa",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A PWA project",
   "private": true,
   "scripts": {
@@ -8,10 +8,10 @@
     "prod": "gulp --silent --production"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.3",
-    "balm": "^0.22.0",
+    "babel-eslint": "^9.0.0",
+    "balm": "^0.24.2",
     "gulp": "^3.9.1",
-    "workbox-build": "^3.2.0",
-    "workbox-sw": "^3.2.0"
+    "workbox-build": "^3.5.0",
+    "workbox-sw": "^3.5.0"
   }
 }
