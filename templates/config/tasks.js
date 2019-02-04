@@ -1,7 +1,8 @@
-var balm = require('balm');
-var workboxBuild = require('workbox-build');
+const gulp = require('gulp');
+const balm = require('balm');
+const workboxBuild = require('workbox-build');
 
-var DIST_DIR = balm.config.production ? 'dist' : '.tmp';
+const DIST_DIR = balm.config.isProd ? 'dist' : '.tmp';
 
 gulp.task('generate-sw', () => {
   return workboxBuild
