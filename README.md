@@ -1,4 +1,4 @@
-## BalmJS template - pwa
+# BalmJS template - pwa
 
 > A PWA project
 
@@ -26,4 +26,4 @@ npm run dev
 npm run prod
 ```
 
-> thx [BalmJS](http://balmjs.com/)
+> thx [BalmJS](https://balmjs.com/)
