@@ -7,8 +7,10 @@ if (workbox) {
 }
 
 workbox.core.setCacheNameDetails({
-  prefix: 'my-app',
-  suffix: 'v1'
+  prefix: 'balm',
+  suffix: 'v1',
+  precache: 'app-cache',
+  runtime: 'app-runtime'
 });
 
 workbox.precaching.precacheAndRoute([]);

@@ -29,6 +29,13 @@ module.exports = {
   },
   extras: {
     excludes: ['service-worker.js']
+  },
+  pwa: {
+    enabled: true,
+    mode: 'injectManifest',
+    options: {
+      globPatterns: ['**/*.{html,css,js,ico,png,svg}']
+    }
   }
   // More Config
 };
