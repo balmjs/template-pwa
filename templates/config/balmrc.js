@@ -16,8 +16,7 @@ module.exports = {
     }
   },
   styles: {
-    ext: 'css', // Default use PostCSS
-    autoprefixer: ['last 1 version']
+    ext: 'css' // Default use PostCSS
   },
   scripts: {
     entry: {
