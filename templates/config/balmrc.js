@@ -1,4 +1,3 @@
-/*eslint no-undef: "error"*/
 /*eslint-env node*/
 const path = require('path');
 
@@ -28,6 +27,9 @@ module.exports = {
   },
   extras: {
     excludes: ['service-worker.js']
+  },
+  assets: {
+    excludes: ['dist/img/icons/icon-*.png']
   },
   pwa: {
     enabled: true,
