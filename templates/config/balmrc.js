@@ -1,21 +1,14 @@
 /*eslint-env node*/
 const path = require('path');
 
-// Documentation - http://balmjs.com/docs/en/configuration/toc.html
-// 中文文档 - http://balmjs.com/docs/zh-cn/configuration/toc.html
+// Documentation - http://balmjs.com/docs/v2/config/
+// 中文文档 - https://balmjs.com/docs/v2/zh/config/
 module.exports = {
   roots: {
     source: 'app'
   },
-  paths: {
-    source: {
-      css: 'styles',
-      js: 'scripts',
-      img: 'images'
-    }
-  },
   styles: {
-    ext: 'css' // Default use PostCSS
+    extname: 'css' // Default use PostCSS
   },
   scripts: {
     entry: {
@@ -29,7 +22,7 @@ module.exports = {
     excludes: ['service-worker.js']
   },
   assets: {
-    excludes: ['dist/img/icons/icon-*.png']
+    excludes: ['dist/img/icons/*.png']
   },
   pwa: {
     enabled: true,

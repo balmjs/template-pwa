@@ -5,11 +5,11 @@
   "author": "{{ author }}",
   "scripts": {
     "dev": "gulp --silent",
-    "prod": "gulp --silent --production"
+    "prod": "gulp --silent -p"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.2",
-    "balm": "^1.8.1",
+    "babel-eslint": "^10.0.3",
+    "balm": "^2.0.4",
     "gulp": "^4.0.2"
   },
   "private": true
