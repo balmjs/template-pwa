@@ -1,4 +1,4 @@
-# BalmJS template - pwa
+# BalmJS template - `pwa`
 
 > A PWA project
 
@@ -14,7 +14,7 @@ yarn
 npm i
 ```
 
-> [App Manifest Generator](https://app-manifest.firebaseapp.com/)
+- [App Manifest Generator](https://app-manifest.firebaseapp.com/)
 
 ## Enjoy
 
@@ -26,4 +26,4 @@ npm run dev
 npm run prod
 ```
 
-> thx [BalmJS](https://balmjs.com/)
+- thx [BalmJS](https://balmjs.com/)
