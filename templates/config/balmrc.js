@@ -1,4 +1,4 @@
-/*eslint-env node*/
+/* eslint-env node */
 const path = require('path');
 
 // Documentation - http://balmjs.com/docs/v2/config/

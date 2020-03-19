@@ -1,4 +1,4 @@
-/*eslint-env node*/
+/* eslint-env node */
 const balm = require('balm');
 const config = require('./config/balmrc');
 
