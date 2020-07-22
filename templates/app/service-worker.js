@@ -22,6 +22,6 @@ workbox.routing.registerRoute(
   })
 );
 
-self.addEventListener('message', function(event) {
+self.addEventListener('message', function (event) {
   console.log(event.data);
 });
