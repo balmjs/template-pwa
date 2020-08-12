@@ -2,10 +2,26 @@
 
 > A PWA project
 
+## Requirements
+
+```sh
+yarn global add balm-core balm-cli
+# OR
+npm install -g balm-core balm-cli
+```
+
+```sh
+# Verify
+balm -V
+
+# Output:
+# balm-cli: 2.0.0
+# balm-core: 3.0.0
+```
+
 ## Installation
 
 ```sh
-npm install -g balm-cli
 balm init pwa my-project
 
 cd my-project
@@ -14,7 +30,10 @@ yarn
 npm i
 ```
 
+Since the application manifest is a text file, you can choose to write it by hand or use a tool that simplifies its creation. Several tools are available online:
+
 - [App Manifest Generator](https://app-manifest.firebaseapp.com/)
+- [Web App Manifest Generator](https://tomitm.github.io/appmanifest/)
 
 ## Enjoy
 
@@ -26,4 +45,4 @@ npm run dev
 npm run prod
 ```
 
-- thx [BalmJS](https://balmjs.com/)
+- thx [BalmJS](https://balm.js.org/)
