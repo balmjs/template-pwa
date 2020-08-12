@@ -7,8 +7,8 @@
 // existing tabs open on the page have been closed, since previously cached
 // resources are updated in the background.
 
-const DEBUG = true;
-const PUBLIC_URL = process.env.PUBLIC_URL || '';
+const DEBUG = false; // For local test
+const PUBLIC_URL = process.env.PUBLIC_URL || ''; // Your host
 
 const isLocalhost =
   !DEBUG &&
